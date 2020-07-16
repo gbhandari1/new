@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% block mycss %}
+  <style media="screen">
+    .registerForm {
+      position: relative;
+      margin-top : 200px;
+      width : 20em;
+    }
+  </style>
+{% endblock %}
+{% block content %}
+
+<div class="container card registerForm">
+  <div class="card-header text-center mt-4">
+    <h3>Log In</h3>
+  </div>
+  <form method = 'POST'>
+    {% csrf_token %}
+    <div class="form-group my-1">
+      <label for="exampleInputEmail1 ">Username:</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name = 'username' >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name='password'>
+    </div>
+
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+
+
+    <p class ='text-center'>If not a member, <a href="{% url 'ressys:register' %}" class="btn btn-info btn-sm text-center">Sign up?</a> </p>
+
+    <button type="submit" class="btn btn-primary btn-block mb-4" >Log In</button>
+  </form>
+</div>
+
+{% endblock %}

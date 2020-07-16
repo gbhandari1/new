@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+
+
+  <div class="row container text-center my-4 mx-4">
+      <div class="col-md">
+          <div class="card card-body">
+                <p>Are you sure you want to delete {{applicant.fname}} {{applicant.lname}}?</p>
+                <form class="" action="{% url 'ressys:delete_applicant' pk=applicant.pk %}" method="POST">
+                    {% csrf_token %}
+                    <a class ='btn btn-info' href="{% url 'ressys:home' %}">Cancel</a>
+                    <input class = 'btn btn-danger' type="submit"  value="Confirm">
+                </form>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+{% endblock %}

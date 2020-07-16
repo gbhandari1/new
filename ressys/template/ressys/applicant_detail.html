@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="container my-4">
+  <div class="jumbotron">
+    <h1 class = 'text-center'>{{applicant.fname}} {{applicant.lname}}</h1>
+    <h2 class = 'text-center'>{{applicant.phone}}</h2>
+    <h2 class = 'text-center'>{{applicant.email}}</h2>
+  </div>
+
+</div>
+<div class="row">
+    <div class="col-md">
+      <div class="card my-4" >
+       <div class="card-body">
+         <h3 class = 'card-title text-center'>Goal Oriented</h3>
+                 <h5 class = 'text-center'><i>{{applicant.goal_oriented}}</i></h5>
+       </div>
+     </div>
+
+    </div>
+
+    <div class="col-md">
+      <div class="card my-4" >
+       <div class="card-body">
+         <h3 class = 'card-title text-center'>Improvement Oriented</h3>
+                 <h5 class = 'text-center'><i>{{applicant.improvement_oriented}}</i></h5>
+       </div>
+     </div>
+
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md my-0">
+      <div class="card my-4" >
+       <div class="card-body">
+         <h3 class = 'card-title text-center'>Success Record</h3>
+                 <h5 class = 'text-center'><i>{{applicant.success_record}}</i></h5>
+       </div>
+     </div>
+
+    </div>
+
+    <div class="col-md">
+      <div class="card my-4" >
+       <div class="card-body">
+         <h3 class = 'card-title text-center'>Culture Fit</h3>
+                 <h5 class = 'text-center'><i>{{applicant.culture_fit}}</i></h5>
+       </div>
+     </div>
+
+    </div>
+</div>
+
+<div class="row my-4">
+
+</div>
+
+<div class="row my-0">
+    <div class="col-md">
+      <div class="card my-4" >
+       <div class="card-body">
+         <h3 class = 'card-title text-center'>Communication</h3>
+                 <h5 class = 'text-center'> <i>{{applicant.communication}}</i> </h5>
+       </div>
+     </div>
+
+    </div>
+</div>
+
+{% endblock %}

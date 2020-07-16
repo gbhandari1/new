@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block content %}
+ <div class="card my-4" >
+  <div class="card-body">
+    <a class = 'card-title btn btn-block btn-primary' href="{% url 'ressys:capp' %}">Create Applicant</a>
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                              <th scope="col">First Name</th>
+                              <th scope="col">Last Name</th>
+                              <th scope="col">Email Name</th>
+                              <th scope="col">Phone</th>
+                              <th scope="col">View</th>
+                              <th scope="col">Update</th>
+                              <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                      {% for applicant in applicants %}
+                      <tr>
+                            <td>{{applicant.fname}}</td>
+                            <td>{{applicant.lname}}</td>
+                            <td>{{applicant.email}}</td>
+                            <td>{{applicant.phone}}</td>
+                            <td> <a class = 'btn  btn-primary btn-info' href="{% url 'ressys:applicant_detail' pk=applicant.pk %}">View</a> </td>
+                            <td> <a class = 'btn  btn-primary btn-primary' href="{% url 'ressys:update_applicant' pk=applicant.pk %}">Update</a> </td>
+                            <td> <a class = 'btn  btn-primary btn-danger' href="{% url 'ressys:delete_applicant' pk=applicant.pk %}">Delete</a> </td>
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+           </table>
+  </div>
+</div>
+
+{% endblock %}
